@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>初识NodeJS | 发烧哥</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="在学习的时候我们要有一个概念：NodeJS就是一个javascript的执行环境，程序员写代码的时候只需要写js代码即可。在脑海中一定要分清楚客户端和 服务端或者叫做后端（apache + php）,java, .net ,NodeJS you can find me on GitHub.
+从JS的模块化开发讲起模块化开发的意义12- 大家在开发静态页面的时候可以使用模块化来开发（在公司里面就可以">
+<meta property="og:type" content="article">
+<meta property="og:title" content="初识NodeJS">
+<meta property="og:url" content="http://hu-qi.github.io/2016/08/10/NodeJS前言/index.html">
+<meta property="og:site_name" content="发烧哥">
+<meta property="og:description" content="在学习的时候我们要有一个概念：NodeJS就是一个javascript的执行环境，程序员写代码的时候只需要写js代码即可。在脑海中一定要分清楚客户端和 服务端或者叫做后端（apache + php）,java, .net ,NodeJS you can find me on GitHub.
+从JS的模块化开发讲起模块化开发的意义12- 大家在开发静态页面的时候可以使用模块化来开发（在公司里面就可以">
+<meta property="og:updated_time" content="2016-08-09T21:04:14.238Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="初识NodeJS">
+<meta name="twitter:description" content="在学习的时候我们要有一个概念：NodeJS就是一个javascript的执行环境，程序员写代码的时候只需要写js代码即可。在脑海中一定要分清楚客户端和 服务端或者叫做后端（apache + php）,java, .net ,NodeJS you can find me on GitHub.
+从JS的模块化开发讲起模块化开发的意义12- 大家在开发静态页面的时候可以使用模块化来开发（在公司里面就可以">
+  
+    <link rel="alternate" href="/atom.xml" title="发烧哥" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">发烧哥</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://hu-qi.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-NodeJS前言" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/08/10/NodeJS前言/" class="article-date">
+  <time datetime="2016-08-09T20:50:16.262Z" itemprop="datePublished">2016-08-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      初识NodeJS
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在学习的时候我们要有一个概念：NodeJS就是一个javascript的执行环境，程序员写代码的时候只需要写js代码即可。在脑海中一定要分清楚客户端和 服务端或者叫做后端（apache + php）,java, .net ,NodeJS you can find me on <a href="https://github.com/hu-qi/" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="从JS的模块化开发讲起"><a href="#从JS的模块化开发讲起" class="headerlink" title="从JS的模块化开发讲起"></a>从JS的模块化开发讲起</h2><h3 id="模块化开发的意义"><a href="#模块化开发的意义" class="headerlink" title="模块化开发的意义"></a>模块化开发的意义</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- 大家在开发静态页面的时候可以使用模块化来开发（在公司里面就可以去怎么用）</div><div class="line">- 解决非模块化开发所带来的问题，为NodeJS中的模块化开发做铺垫</div></pre></td></tr></table></figure>
+<h3 id="非模块化开发所带来的问题"><a href="#非模块化开发所带来的问题" class="headerlink" title="非模块化开发所带来的问题"></a>非模块化开发所带来的问题</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- 变量冲突 （变量污染）</div><div class="line">- js文件依赖问题</div></pre></td></tr></table></figure>
+<h3 id="程序中的模块化的演进"><a href="#程序中的模块化的演进" class="headerlink" title="程序中的模块化的演进"></a>程序中的模块化的演进</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#### 全局变量的写法</span></div><div class="line">- 缺点</div><div class="line">    + 变量容易被污染</div><div class="line"></div><div class="line"><span class="comment">#### 命名空间</span></div><div class="line">- 减少全局变量的污染几率</div><div class="line">- 缺点</div><div class="line">    + 不能隐藏私有成员</div><div class="line"></div><div class="line"><span class="comment">#### 私有空间</span></div><div class="line">- 利用一个函数来划分私有化空间</div><div class="line">- 利用了自执行函数进行了代码的简化</div><div class="line">    var calc = <span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">    </div><div class="line">    &#125;</div><div class="line"></div><div class="line">    var calcObj = calc();</div></pre></td></tr></table></figure>
+<h3 id="模块化的维护和扩展"><a href="#模块化的维护和扩展" class="headerlink" title="模块化的维护和扩展"></a>模块化的维护和扩展</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">在扩展一个模块的时候遵循一个开闭原则</div><div class="line">在这里我们采取的是自执行函数来进行扩展，达到不修改原有的逻辑代码</div></pre></td></tr></table></figure>
+<p>###<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">```</div><div class="line"><span class="comment">###</span></div><div class="line">``` bash</div></pre></td></tr></table></figure></p>
+<p>###<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">```</div><div class="line"><span class="comment">###</span></div><div class="line">``` bash</div></pre></td></tr></table></figure></p>
+<h3 id="模块依赖第三方模块"><a href="#模块依赖第三方模块" class="headerlink" title="模块依赖第三方模块"></a>模块依赖第三方模块</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">我们在自执行函数的执行()中注明要传入的第三方模块的变量，让其他程序员一看就明白这个模块要依赖于哪些第三方模块</div></pre></td></tr></table></figure>
+<p>###模块化开发的最主要目的：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1、代码规范，方便阅读和扩展</div><div class="line">2、在系统开发中各个模块中定义的成员是隔离的，在其他模块中是不能被访问到的</div></pre></td></tr></table></figure></p>
+<h2 id="谈一谈模块化开发框架seajs"><a href="#谈一谈模块化开发框架seajs" class="headerlink" title="谈一谈模块化开发框架seajs"></a>谈一谈模块化开发框架seajs</h2><h3 id="seajs的基本使用步骤："><a href="#seajs的基本使用步骤：" class="headerlink" title="seajs的基本使用步骤："></a>seajs的基本使用步骤：</h3><ol>
+<li>引入sea.js</li>
+<li>定义模块 （define(function(require,exports,modules){编写模块的逻辑代码})）</li>
+<li>使用模块<br> seajs.use(“模块的路径”,function(模块中通过exports或者modules.exports暴露出来的成员){})</li>
+</ol>
+<h3 id="seajs中的关键字"><a href="#seajs中的关键字" class="headerlink" title="seajs中的关键字"></a>seajs中的关键字</h3><ul>
+<li>define 作用：定义一个模块（一个文件就是一个模块）</li>
+<li>require  作用：载入一个模块，同时会将当前载入的模块中的 exports对象赋予给 一个变量</li>
+<li>exports 作用：暴露当前模块中想要暴露出去的成员， 是modules.exports的别名，二者等价</li>
+<li>modules  ：代表一个模块，里面的exports对象就是暴露当前模块中想要暴露出去的成员</li>
+<li>seajs.use() ： 使用一个模块</li>
+<li>seajs.config({base: , alias:{}}) 的作用<ul>
+<li>base:表示设置多个模块的统一路径前缀</li>
+<li>alias：表示给一个模块设置别名<pre><code>设置别名的作用:
+ 1、方便程序员的记忆 
+ 2、简化模块的路径
+ 例如： alias:{&quot;jianfa&quot;:&quot;./calcModule/subStract.js&quot;} ,将长路径的./calcModule/subStract.js简化成好记忆的jianfa
+ 在使用模块时只需要使用别名即可 seajs.use(&quot;jianfa&quot;) 而不需要使用 seajs.use(&quot;./calcModule/subStract.js&quot;)
+</code></pre></li>
+</ul>
+</li>
+</ul>
+<h3 id="seajs应用"><a href="#seajs应用" class="headerlink" title="seajs应用"></a>seajs应用</h3><ul>
+<li>利用seajs改造上午的计算器模块</li>
+</ul>
+<ul>
+<li>参考sea.js改造的计算器案例，实现一个工具模块，此模块中包含如下功能：</li>
+</ul>
+<ol>
+<li>字母转大写 upper.js 利用 toUpperCase()实现</li>
+<li>字母转小写 lower.js 利用 toLowerCase()实现</li>
+<li>替换字符 replace.js 利用 replace()实现</li>
+</ol>
+<p>思路：<br> 在util.js 中利用require()加载上面三个模块，在test.html中利用seajs.use(‘../app/util.js’,funciton(util){});实现调用</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://hu-qi.github.io/2016/08/10/NodeJS前言/" data-id="ciruyqeh00000o858bwhml7r4" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/08/10/NodeJS前言/">初识NodeJS</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 huqi<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
